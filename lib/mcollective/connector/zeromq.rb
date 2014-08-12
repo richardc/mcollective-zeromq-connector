@@ -208,7 +208,7 @@ module MCollective
       end
 
       def headers_for_kind(agent, type, collective, target = nil)
-        reply_to = "#{collective} reply #{Config.instance.identity} #{$$}"
+        reply_to = "#{collective} reply #{Config.instance.identity} #{$$} #{Client.request_sequence}"
         headers = {}
         case type
         when :reply
